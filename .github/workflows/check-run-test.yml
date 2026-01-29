@@ -1,0 +1,12 @@
+name: Check Run Test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  success_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Success step
+        run: echo "This check will succeed"
