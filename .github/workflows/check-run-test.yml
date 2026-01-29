@@ -5,10 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  neutral_job:
+  timeout_job:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
-      - name: Emit warning but succeed
-        run: |
-          echo "::warning::This is a neutral outcome"
-          exit 0
+      - run: sleep 120
