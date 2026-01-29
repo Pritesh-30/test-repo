@@ -1,12 +1,14 @@
-name: Check Run Test
+name: Check Run Cancelled Test
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  success_job:
+  cancelled_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Success step
-        run: exit 1
+      - name: Long running step (cancel me)
+        run: |
+          echo "Sleeping... cancel this job from UI"
+          sleep 600
