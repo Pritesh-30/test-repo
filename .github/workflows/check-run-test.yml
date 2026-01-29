@@ -1,14 +1,15 @@
-name: Check Run Cancelled Test
+name: Check Run Timed Out Test
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  cancelled_job:
+  timed_out_job:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
-      - name: Long running step (cancel me)
+      - name: Sleep longer than timeout
         run: |
-          echo "Sleeping... cancel this job from UI"
-          sleep 600
+          echo "This job will time out"
+          sleep 300
