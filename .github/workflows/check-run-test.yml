@@ -1,13 +1,14 @@
-name: Check Run Skipped Test
+name: Check Run Neutral Test
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  skipped_job:
-    if: false
+  neutral_job:
     runs-on: ubuntu-latest
     steps:
-      - name: This will never run
-        run: echo "Skipped"
+      - name: Emit warning but succeed
+        run: |
+          echo "::warning::This is a neutral outcome"
+          exit 0
