@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Success step
-        run: echo "This check will succeed"
+        run: echo "This check will successfully complete."
