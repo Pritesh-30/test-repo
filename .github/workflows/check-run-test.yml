@@ -1,15 +1,13 @@
-name: Check Run Timed Out Test
+name: Check Run Skipped Test
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  timed_out_job:
+  skipped_job:
+    if: false
     runs-on: ubuntu-latest
-    timeout-minutes: 1
     steps:
-      - name: Sleep longer than timeout
-        run: |
-          echo "This job will time out"
-          sleep 300
+      - name: This will never run
+        run: echo "Skipped"
