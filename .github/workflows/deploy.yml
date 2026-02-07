@@ -6,7 +6,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production   # important
+    environment: production  
     steps:
       - name: Deployment step
         run: echo "Waiting for approval"
