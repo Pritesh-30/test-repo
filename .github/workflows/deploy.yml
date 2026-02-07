@@ -1,13 +1,12 @@
-name: Deployment Status Test
+name: Deployment Pending Test
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production   # used for pending state
+    environment: production   # important
     steps:
-      - name: Deployment failure
-        run: exit 1
+      - name: Deployment step
+        run: echo "Waiting for approval"
